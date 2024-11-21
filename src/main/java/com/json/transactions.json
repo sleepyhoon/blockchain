@@ -1,0 +1,63 @@
+[
+  {
+    "txId": "abc123",
+    "inputTransaction": {
+      "inputUtxo": "prev_txid1:0",
+      "unlockingScript": "signature pubKey"
+    },
+    "utxos": [
+      {
+        "index": 0,
+        "amount": 5000,
+        "lockingScript": "DUP HASH pubKeyHash EQUALVERIFY CHECKSIG"
+      }
+    ]
+  },
+  {
+    "txId": "def456",
+    "inputTransaction": {
+      "inputUtxo": "abc123:0",
+      "unlockingScript": "signature pubKey"
+    },
+    "utxos": [
+      {
+        "index": 0,
+        "amount": 3000,
+        "lockingScript": "DUP HASH scriptXHash EQUALVERIFY"
+      },
+      {
+        "index": 1,
+        "amount": 2000,
+        "lockingScript": "DUP HASH scriptYHash EQUALVERIFY"
+      }
+    ]
+  },
+  {
+    "txId": "ghi789",
+    "inputTransaction": {
+      "inputUtxo": "def456:1",
+      "unlockingScript": "sig1 sig2"
+    },
+    "utxos": [
+      {
+        "index": 0,
+        "amount": 8000,
+        "lockingScript": "2 pubKey1 pubKey2 pubKey3 3 CHECKMULTISIG"
+      }
+    ]
+  },
+  {
+    "txId": "jkl012",
+    "inputTransaction": {
+      "inputUtxo": "ghi789:0",
+      "unlockingScript": "signature pubKey"
+    },
+    "utxos": [
+      {
+        "index": 0,
+        "amount": 7000,
+        "lockingScript": "IF DUP HASH pubKeyHash EQUALVERIFY CHECKSIG ELSE 2 pubKey1 pubKey2 pubKey3 3 CHECKMULTISIG ENDIF"
+      }
+    ]
+  }
+]
