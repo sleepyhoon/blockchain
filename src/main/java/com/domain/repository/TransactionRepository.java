@@ -1,4 +1,4 @@
-package com.repository;
+package com.domain.repository;
 
 import com.domain.entity.Transaction;
 import java.util.Collection;
@@ -29,7 +29,7 @@ public class TransactionRepository {
     private final LinkedHashMap<String, Transaction> linkedHashMap = new LinkedHashMap<>();
 
     public void save(Transaction transaction) {
-        linkedHashMap.put(transaction.getTxId(),transaction);
+        linkedHashMap.put(transaction.txId(),transaction);
     }
 
     public Transaction get(String id) {

@@ -1,6 +1,6 @@
 package com.domain.dto;
 
-import com.domain.entity.InputTransaction;
+import com.domain.entity.InputUtxo;
 import com.domain.entity.Utxo;
 import java.util.List;
 
@@ -25,22 +25,8 @@ import java.util.List;
  * 2024-11-21        SeungHoon              init create
  * </pre>
  */
-public class CreateTransactionDto {
-    private String txId;
-    private InputTransaction inputTransaction;
-    private List<Utxo> utxos;
-
-    public CreateTransactionDto() {}
-
-    public String getTxId() {
-        return txId;
-    }
-
-    public InputTransaction getInputTransaction() {
-        return inputTransaction;
-    }
-
-    public List<Utxo> getUtxos() {
-        return utxos;
-    }
+public record CreateTransactionDto(
+        String txId, InputUtxo inputUtxo, List<UtxoDto> utxos
+) {
 }
+

@@ -1,8 +1,8 @@
 [
   {
     "txId": "abc123",
-    "inputTransaction": {
-      "inputUtxo": "prev_txid1:0",
+    "inputUtxo": {
+      "prevOutputId": "prev_txid1:0",
       "unlockingScript": "signature pubKey"
     },
     "utxos": [
@@ -15,8 +15,8 @@
   },
   {
     "txId": "def456",
-    "inputTransaction": {
-      "inputUtxo": "abc123:0",
+    "inputUtxo": {
+      "prevOutputId": "abc123:0",
       "unlockingScript": "signature pubKey"
     },
     "utxos": [
@@ -34,8 +34,8 @@
   },
   {
     "txId": "ghi789",
-    "inputTransaction": {
-      "inputUtxo": "def456:1",
+    "inputUtxo": {
+      "prevOutputId": "def456:1",
       "unlockingScript": "sig1 sig2"
     },
     "utxos": [
@@ -48,8 +48,8 @@
   },
   {
     "txId": "jkl012",
-    "inputTransaction": {
-      "inputUtxo": "ghi789:0",
+    "inputUtxo": {
+      "prevOutputId": "ghi789:0",
       "unlockingScript": "signature pubKey"
     },
     "utxos": [
