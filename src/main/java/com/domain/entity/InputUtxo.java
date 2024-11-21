@@ -1,10 +1,8 @@
 package com.domain.entity;
 
-import com.domain.dto.CreateUtxoDto;
-
 /**
  * <br>package name   : com.domain
- * <br>file name      : OutputTransaction
+ * <br>file name      : InputTransaction
  * <br>date           : 2024-11-21
  * <pre>
  * <span style="color: white;">[description]</span>
@@ -23,17 +21,11 @@ import com.domain.dto.CreateUtxoDto;
  * 2024-11-21        SeungHoon              init create
  * </pre>
  */
-public record Utxo(
-        String utxoId,
-        Amount amount,
-        String lockingScript
+public record InputUtxo(
+        String prevOutputId, // txid:index 로 구성됨.
+        String unlockingScript
 ) {
-    public static Utxo of(CreateUtxoDto createUtxoDto) {
-        return new Utxo(makeUxtoId(createUtxoDto.txId(),createUtxoDto.index()), createUtxoDto.amount(),
-                createUtxoDto.lockingScript());
-    }
-
-    private static String makeUxtoId(String txId,Integer index) {
-        return txId + ":" + index;
+    public static InputUtxo of(String prevOutputId, String unlockingScript) {
+        return new InputUtxo(prevOutputId,unlockingScript);
     }
 }

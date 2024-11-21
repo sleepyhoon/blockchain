@@ -1,7 +1,9 @@
 package com.global.config;
 
+import com.domain.entity.Utxo;
+import com.domain.repository.UtxoRepository;
 import com.global.util.TxInitializer;
-import com.repository.TransactionRepository;
+import com.domain.repository.TransactionRepository;
 
 /**
  * <br>package name   : com.global.config
@@ -26,7 +28,8 @@ import com.repository.TransactionRepository;
  */
 public class FullNodeConfig {
     private static final TransactionRepository transactionRepository = new TransactionRepository();
-    private static final TxInitializer txInitializer = new TxInitializer(transactionRepository);
+    private static final UtxoRepository utxoRepository = new UtxoRepository();
+    private static final TxInitializer txInitializer = new TxInitializer(transactionRepository,utxoRepository);
     private FullNodeConfig() {}
 
     public static TxInitializer getTxInitializer() {

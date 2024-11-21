@@ -1,0 +1,50 @@
+[
+  {
+    "txId": "abc123",
+    "index": 0,
+    "amount": 5000,
+    "lockingScript": "DUP HASH pubKeyHash EQUALVERIFY CHECKSIG"
+  },
+  {
+    "txId": "def456",
+    "index": 0,
+    "amount": 3000,
+    "lockingScript": "DUP HASH scriptXHash EQUALVERIFY"
+  },
+  {
+    "txId": "def456",
+    "index": 1,
+    "amount": 2000,
+    "lockingScript": "DUP HASH scriptYHash EQUALVERIFY"
+  },
+  {
+    "txId": "ghi789",
+    "index": 0,
+    "amount": 8000,
+    "lockingScript": "2 pubKey1 pubKey2 pubKey3 3 CHECKMULTISIG"
+  },
+  {
+    "txId": "jkl012",
+    "index": 0,
+    "amount": 7000,
+    "lockingScript": "IF DUP HASH pubKeyHash EQUALVERIFY CHECKSIG ELSE 2 pubKey1 pubKey2 pubKey3 3 CHECKMULTISIG ENDIF"
+  },
+  {
+    "txId": "mno345",
+    "index": 0,
+    "amount": 1500,
+    "lockingScript": "HASH160 pubKeyHash CHECKSIG"
+  },
+  {
+    "txId": "mno345",
+    "index": 1,
+    "amount": 3500,
+    "lockingScript": "DUP HASH pubKeyHash EQUALVERIFY CHECKSIG"
+  },
+  {
+    "txId": "pqr678",
+    "index": 0,
+    "amount": 2000,
+    "lockingScript": "IF pubKeyHash CHECKSIG ELSE 2 pubKey1 pubKey2 CHECKMULTISIG ENDIF"
+  }
+]

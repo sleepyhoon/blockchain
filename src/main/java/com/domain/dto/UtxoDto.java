@@ -1,10 +1,10 @@
-package com.domain.entity;
+package com.domain.dto;
 
-import com.domain.dto.CreateUtxoDto;
+import com.domain.entity.Amount;
 
 /**
- * <br>package name   : com.domain
- * <br>file name      : OutputTransaction
+ * <br>package name   : com.domain.dto
+ * <br>file name      : UtxoDto
  * <br>date           : 2024-11-21
  * <pre>
  * <span style="color: white;">[description]</span>
@@ -23,17 +23,9 @@ import com.domain.dto.CreateUtxoDto;
  * 2024-11-21        SeungHoon              init create
  * </pre>
  */
-public record Utxo(
-        String utxoId,
+public record UtxoDto(
+        Integer index,
         Amount amount,
         String lockingScript
 ) {
-    public static Utxo of(CreateUtxoDto createUtxoDto) {
-        return new Utxo(makeUxtoId(createUtxoDto.txId(),createUtxoDto.index()), createUtxoDto.amount(),
-                createUtxoDto.lockingScript());
-    }
-
-    private static String makeUxtoId(String txId,Integer index) {
-        return txId + ":" + index;
-    }
 }

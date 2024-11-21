@@ -1,8 +1,10 @@
-package com.domain.entity;
+package com.domain.dto;
+
+import com.domain.entity.Amount;
 
 /**
- * <br>package name   : com.domain
- * <br>file name      : InputTransaction
+ * <br>package name   : com.domain.dto
+ * <br>file name      : CreateUtxoDto
  * <br>date           : 2024-11-21
  * <pre>
  * <span style="color: white;">[description]</span>
@@ -21,11 +23,10 @@ package com.domain.entity;
  * 2024-11-21        SeungHoon              init create
  * </pre>
  */
-public record InputTransaction (
-        String inputUtxo, // txid:index 로 구성됨.
-        String unlockingScript
+public record CreateUtxoDto(
+        String txId,
+        Integer index,
+        Amount amount,
+        String lockingScript
 ) {
-    public static InputTransaction of(String inputTxId,String unlockingScript) {
-        return new InputTransaction(inputTxId,unlockingScript);
-    }
 }
