@@ -4,28 +4,9 @@ import com.domain.entity.Transaction;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
-/**
- * <br>package name   : com.repository
- * <br>file name      : TransactionRepository
- * <br>date           : 2024-11-21
- * <pre>
- * <span style="color: white;">[description]</span>
- *
- * </pre>
- * <pre>
- * <span style="color: white;">usage:</span>
- * {@code
- *
- * } </pre>
- * <pre>
- * modified log :
- * =======================================================
- * DATE           AUTHOR               NOTE
- * -------------------------------------------------------
- * 2024-11-21        SeungHoon              init create
- * </pre>
- */
+
 public class TransactionRepository {
+    //id를 통해 검색하며, 순서가 중요하기 때문에 LinkedHashMap으로 선언.
     private final LinkedHashMap<String, Transaction> linkedHashMap = new LinkedHashMap<>();
 
     public void save(Transaction transaction) {

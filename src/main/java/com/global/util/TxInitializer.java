@@ -12,27 +12,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * <br>package name   : com.global.util
- * <br>file name      : TxInitializer
- * <br>date           : 2024-11-21
- * <pre>
- * <span style="color: white;">[description]</span>
- *
- * </pre>
- * <pre>
- * <span style="color: white;">usage:</span>
- * {@code
- *
- * } </pre>
- * <pre>
- * modified log :
- * =======================================================
- * DATE           AUTHOR               NOTE
- * -------------------------------------------------------
- * 2024-11-21        SeungHoon              init create
- * </pre>
- */
 public class TxInitializer {
     private static final String txPath = "src/main/java/com/json/transactions.json";
     private static final String utxoPath = "src/main/java/com/json/UTXOes.json";
@@ -48,7 +27,6 @@ public class TxInitializer {
 
     public void initFullNode() {
         initTx();
-        System.out.println("===============================");
         initUtxo();
     }
 
@@ -61,7 +39,6 @@ public class TxInitializer {
             createTransactionDtos.forEach(createTransactionDto -> {
                 Transaction transaction = Transaction.create(createTransactionDto);
                 transactionRepository.save(transaction);
-                System.out.println(transaction);
             });
         } catch (IOException e) {
             throw new IllegalArgumentException("Failed to initialize transactions: " + e.getMessage());
@@ -77,7 +54,6 @@ public class TxInitializer {
             createUtxoDtos.forEach(createUtxoDto -> {
                 Utxo utxo = Utxo.of(createUtxoDto);
                 utxoRepository.save(utxo);
-                System.out.println(utxo);
             });
         } catch (IOException e) {
             throw new IllegalArgumentException("Failed to initialize utxos : " + e.getMessage());
