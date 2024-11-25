@@ -11,6 +11,6 @@ public class Main {
         TxInitializer txInitializer = FullNodeConfig.getTxInitializer();
         System.out.println("==================start====================");
         txInitializer.initFullNode();
-        System.out.println("==================end======================");
+        System.out.println("===================end=====================");
     }
 }
